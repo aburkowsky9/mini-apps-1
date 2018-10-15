@@ -1,0 +1,10 @@
+#board {
+  border: 1px solid black;
+  width: 50%;
+}
+
+td {
+  border: 1px solid black;
+  height: 20%;
+  text-align: center;
+}
