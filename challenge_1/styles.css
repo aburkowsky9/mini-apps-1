@@ -1,10 +1,15 @@
 #board {
   border: 1px solid black;
-  width: 50%;
+  width: 60%;
+  height: 60%;
 }
-
+tbody {
+  height: 100%;
+  width: 100%;
+}
 td {
   border: 1px solid black;
-  height: 20%;
+  height: 50px;
+  width: 50px;
   text-align: center;
 }
