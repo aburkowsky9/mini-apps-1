@@ -8,30 +8,42 @@
   <body>
     <section id="header">
       <h1>Tic-Tac-Toe</h1>
-      <button id="reset-button">Reset</button>
     </section>
     <section id="container">
       <table id="board">
-        <tbody>
-          <tr id="row1">
-            <td id="0,0"></td>
-            <td id="0,1"></td>
-            <td id="0,2"></td>
-          </tr>
-          <tr id="row2">
-            <td id="1,0"></td>
-            <td id="1,1"></td>
-            <td id="1,2"></td>
-          </tr>
-          <tr id="row3">
-            <td id="2,0"></td>
-            <td id="2,1"></td>
-            <td id="2,2"></td>
-          </tr>
-        </tbody>
+        <tr class="row" id="row1">
+          <td id="0,0"></td>
+          <td id="0,1"></td>
+          <td id="0,2"></td>
+        </tr>
+        <tr class="row" id="row2">
+          <td id="1,0"></td>
+          <td id="1,1"></td>
+          <td id="1,2"></td>
+        </tr>
+        <tr class="row" id="row3">
+          <td id="2,0"></td>
+          <td id="2,1"></td>
+          <td id="2,2"></td>
+        </tr>
       </table>
     </section>
-    <section>
+    <section id="button">
+      <button id="reset-button">Reset</button>
+    </section>
+    <section id="tracker-area">
+      <div id="tracker">
+        <div class="winCounts">
+          <div class="first">X</div>
+          <div>O</div>
+        </div>
+        <div class="winCounts">
+          <div class="first">1</div>
+          <div>2</div>
+        </div>
+      </div>
+    </section>
+    <section id="announcement-area">
       <div id="announcement"></div>
     </section>
     <script src="./app.js"></script>

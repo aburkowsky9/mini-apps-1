@@ -1,15 +1,65 @@
-#board {
-  border: 1px solid black;
-  width: 60%;
-  height: 60%;
+h1 {
+  text-align: center;
 }
+
+#container, #header, #button, #tracker-area, #announcement-area {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  width: 100%;
+}
+
+#container {
+  height: 500px;
+}
+
+#board {
+  width: 50%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
 tbody {
   height: 100%;
   width: 100%;
 }
+
 td {
-  border: 1px solid black;
   height: 50px;
   width: 50px;
   text-align: center;
 }
+
+tr:first-child > td, tr:nth-child(2) > td {
+  border-bottom: 1px solid black;
+}
+
+tr:first-child > td:not(:last-child), tr:nth-child(2) > td:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+tr:last-child > td:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+#tracker-area {
+  align-items: center; 
+}
+
+.winCounts {
+  padding: 5px;
+  height: 100%;
+  width:100%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.winCounts > div {
+  display: inline;
+}
+
+.first {
+  border-right: 1px solid black;
+}
+
+
