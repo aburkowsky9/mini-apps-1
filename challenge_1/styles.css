@@ -17,6 +17,7 @@ h1 {
   width: 50%;
   height: 100%;
   border-collapse: collapse;
+  font-size: 30px;
 }
 
 tbody {
@@ -24,42 +25,38 @@ tbody {
   width: 100%;
 }
 
-td {
+.position {
   height: 50px;
   width: 50px;
   text-align: center;
 }
 
-tr:first-child > td, tr:nth-child(2) > td {
+.row:first-child > td, .row:nth-child(2) > td {
   border-bottom: 1px solid black;
 }
 
-tr:first-child > td:not(:last-child), tr:nth-child(2) > td:not(:last-child) {
+.row:first-child > td:not(:last-child), .row:nth-child(2) > td:not(:last-child) {
   border-right: 1px solid black;
 }
 
-tr:last-child > td:not(:last-child) {
+.row:last-child > td:not(:last-child) {
   border-right: 1px solid black;
 }
 
 #tracker-area {
-  align-items: center; 
+  width: 100%;
 }
 
-.winCounts {
-  padding: 5px;
-  height: 100%;
-  width:100%;
-  border: 1px solid black;
+#tracker {
+  width: 15%;
+  border-collapse: collapse;
+}
+
+.winCounts > td {
   text-align: center;
+  border: 1px solid black;
+  height: 25px;
 }
 
-.winCounts > div {
-  display: inline;
-}
-
-.first {
-  border-right: 1px solid black;
-}
 
 

@@ -7,7 +7,7 @@ let board = {
   1: [null, null, null],
   2: [null, null, null] 
 }
-const positions = document.getElementsByTagName('td');
+const positions = document.getElementsByClassName('position');
 const button = document.getElementById('reset-button');
 
 const positionClickHandler = (event) => {
@@ -89,6 +89,7 @@ const checkForWin = (id, moveType) => {
     }
     //announce win!!!
     announcement('win', moveType);
+    incrementScoreBoard(moveType);
   } else if (moveCt === 9) {
     announcement('Tie')
   }  
@@ -134,4 +135,11 @@ const announcement = (winOrTie, moveType) => {
     newParagraph.innerHTML = `${winOrTie}: There are no winners or losers here, but we all tried our best!`;
   }
   announcementDiv.appendChild(newParagraph);
+}
+
+const incrementScoreBoard = (moveType) => {
+  debugger;
+  var score = document.getElementById(`${moveType}-win`).innerHTML;
+  score = (Number(score) + 1).toString();
+  document.getElementById(`${moveType}-win`).innerHTML = score;
 }

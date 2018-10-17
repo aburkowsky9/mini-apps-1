@@ -12,19 +12,19 @@
     <section id="container">
       <table id="board">
         <tr class="row" id="row1">
-          <td id="0,0"></td>
-          <td id="0,1"></td>
-          <td id="0,2"></td>
+          <td class="position" id="0,0"></td>
+          <td class="position" id="0,1"></td>
+          <td class="position" id="0,2"></td>
         </tr>
         <tr class="row" id="row2">
-          <td id="1,0"></td>
-          <td id="1,1"></td>
-          <td id="1,2"></td>
+          <td class="position" id="1,0"></td>
+          <td class="position" id="1,1"></td>
+          <td class="position" id="1,2"></td>
         </tr>
         <tr class="row" id="row3">
-          <td id="2,0"></td>
-          <td id="2,1"></td>
-          <td id="2,2"></td>
+          <td class="position" id="2,0"></td>
+          <td class="position" id="2,1"></td>
+          <td class="position" id="2,2"></td>
         </tr>
       </table>
     </section>
@@ -32,16 +32,16 @@
       <button id="reset-button">Reset</button>
     </section>
     <section id="tracker-area">
-      <div id="tracker">
-        <div class="winCounts">
-          <div class="first">X</div>
-          <div>O</div>
-        </div>
-        <div class="winCounts">
-          <div class="first">1</div>
-          <div>2</div>
-        </div>
-      </div>
+      <table id="tracker">
+        <tr class="winCounts">
+          <td>X</td>
+          <td>O</td>
+        </tr>
+        <tr class="winCounts">
+          <td id="X-win">0</td>
+          <td id="O-win">0</td>
+        </tr>
+      </table>
     </section>
     <section id="announcement-area">
       <div id="announcement"></div>
