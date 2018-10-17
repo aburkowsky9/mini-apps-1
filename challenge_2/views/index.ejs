@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSV Report Generator</title>
+  </head>
+  <body>
+    <section id="header">
+      <h1>Reports</h1>
+      <form type="submit" value="Submit" action='/reports-data' method="POST">
+        <div>
+          <label for="report">Report:</label>
+          <textarea id="report" name="report"></textarea>
+          <input type="submit"></input>
+        </div>
+      </form>
+    </section>
+    <section id="report">
+      <pre><%= csv %></pre>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>  
