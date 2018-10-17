@@ -2,6 +2,8 @@
 
 //keep track of move count
 let moveCt = 0;
+let winner = 'X';
+let loser = 'O';
 let board = {
   0: [null, null, null], 
   1: [null, null, null],
@@ -49,13 +51,13 @@ const moveExecuter = (event) => {
   moveCt++;
   //alternate even/odd moves for players
   if (moveCt % 2 !== 0) {
-    event.target.innerHTML = 'X';
-    moveType = 'X';
-    adjustBoard(event.target.id, 'X');
+    event.target.innerHTML = winner;
+    moveType = winner;
+    adjustBoard(event.target.id, winner);
   } else {
-    event.target.innerHTML = 'O';
-    moveType = 'O';
-    adjustBoard(event.target.id, 'O');
+    event.target.innerHTML = loser;
+    moveType = loser;
+    adjustBoard(event.target.id, loser);
   }
 
   if (moveCt >= 3) {
@@ -138,8 +140,16 @@ const announcement = (winOrTie, moveType) => {
 }
 
 const incrementScoreBoard = (moveType) => {
-  debugger;
   var score = document.getElementById(`${moveType}-win`).innerHTML;
   score = (Number(score) + 1).toString();
   document.getElementById(`${moveType}-win`).innerHTML = score;
+
+  //change winner and loser global variables
+  winner = moveType;
+
+  if (winner === 'X') {
+    loser = 'O';
+  } else {
+    loser = 'X';
+  }
 }
