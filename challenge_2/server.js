@@ -6,7 +6,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const ejs = require('ejs')
+const ejs = require('ejs');
+const multer = require('multer');
+const upload = multer();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -18,16 +20,17 @@ app.use(express.static('node_modules'));
 
 let data = '';
 
-// app.get('/reports-data', (req, res) => {
-//   let report = JSON.parse(req.body.report);
-//   let csv = JSONToCSV(report);
-//   res.render('index', {csv: data});
-// });
-
 app.post('/reports-data', (req, res) => {
   let report = JSON.parse(req.body.report);
   data = JSONToCSV(report);
   res.render('index', {csv: data});
+});
+
+app.post('/uploads', upload.single('file'), (req, res) => {
+  console.log(JSON.parse(req.body.file));
+  // let report = JSON.parse(req.body.report);
+  // data = JSONToCSV(report);
+  // res.render('index', {csv: data});
 });
 
 const JSONToCSV = (report) => {
