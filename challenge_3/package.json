@@ -1,0 +1,20 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "miniapp-3-checkout-experience",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore node_modules",
+    "compile": "babel client --watch --out-dir public --presets=env,react --ignore=node_modules --source-maps inline"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
