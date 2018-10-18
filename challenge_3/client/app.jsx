@@ -28,8 +28,18 @@ class App extends React.Component {
   }
   
   handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state);
+    this.setState({
+      currentForm: Form1,
+      fullName: '',
+      email: '',
+      password: '', 
+      shippingAddress: '',
+      phone: '', 
+      creditNum: '',
+      expDate: '',
+      cvv: '',
+      zip: ''
+    });
   }
   
   nextOnClick(event) {
@@ -132,18 +142,20 @@ const Form3 = (props) => {
 }
 
 const Purchase = (props) => {
+  var purchaseInfo = JSON.stringify(props.purchaseInfo);
+  console.log(props)
   return (
     <div>
       <h3>Click Purchase For Submission</h3>
       <form type="submit" value="Submit" action="/purchases" method="POST">
         <div>
           <label>Shipping Address:
-          <textarea rows="10" columns="10" name="shippingAddress" className="shippingAddress" onChange={ (event) => props.handleInput(event) }>{ JSON.stringify(props.purchaseInfo) }
+          <textarea rows="10" columns="10" name="purchaseInfo" className="shippingAddress" onChange={ (event) => props.handleInput(event) }>{ purchaseInfo }
           </textarea>
           </label>
         </div>
         <div>
-          <button onSubmit={ (event) =>  {event.preventDefault(); console.log(App.state)} }>Purchase</button>
+          <button onSubmit={ (event) =>  props.handleSubmit(event) }>Purchase</button>
         </div>
       </form>
     </div>
