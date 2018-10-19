@@ -27,7 +27,7 @@ app.post('/reports-data', (req, res) => {
 });
 
 app.post('/uploads', upload.single('file'), (req, res) => {
-  console.log(JSON.parse(req.body.file));
+  console.log(req);
   // let report = JSON.parse(req.body.report);
   // data = JSONToCSV(report);
   // res.render('index', {csv: data});
